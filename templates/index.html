@@ -40,11 +40,8 @@
       <h3 class="masthead-brand">5Star Logistics</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
-        {% if user %}
         <a class="nav-link" href="/add">Add Package</a>
-        {% else %}
         <a class="nav-link" href="/login">Login</a>
-        {% endif %}
         <a class="nav-link" href="/adminpg">Admin</a>
       </nav>
     </div>
@@ -55,7 +52,7 @@
     <p class="lead">at 5Star Logistics, We help clients send their products to Rwanda. We will be pleased to serve you well, your package will be successfully delivered in a few days. </p>
       <form action="/search/" class="form-inline mt-2 mt-md-0">
         <input style="width:85%;" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-2" type="submit">Search</button>
+        <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>
   </main>
 
