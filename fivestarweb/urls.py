@@ -32,3 +32,6 @@ urlpatterns = [
     url(r'^login/$',auth_views.login, {'template_name': 'login.html'}),
     url(r'^logout/$',auth_views.logout, {'next_page': '/login/'}),
 ]
+media_urls=[static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)]
+for url in media_urls:
+	urlpatterns+=url
