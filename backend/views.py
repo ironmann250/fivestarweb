@@ -163,7 +163,7 @@ def renderTicket(request,packagenum):
 	#compute size from text? later now no more than 30 chars(further work more coffee)
 	
 	print packagenum
-	url="http://127.0.0.1:8000/package/"
+	url="http://fivestar5.herokuapp.com/package/"
 	user_vals={
 	'pin':'No: '+package.packagenum,
 	'name':"From: "+package.destination,
