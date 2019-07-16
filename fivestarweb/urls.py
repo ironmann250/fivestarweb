@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^add/', views.add),
     url(r'^search/', views.search),
     url(r'^added/(?P<packagenum>.*)', views.added),
+    url(r'^package/(?P<packagenum>.*)', views.package),
     url(r'^render_ticket/(?P<packagenum>.*\.jpg)',views.renderTicket),
     url(r'^login/$',auth_views.login, {'template_name': 'login.html'}),
     url(r'^logout/$',auth_views.logout, {'next_page': '/login/'}),

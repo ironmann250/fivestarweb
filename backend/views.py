@@ -128,6 +128,9 @@ def added(request,packagenum):
 	package=get_object_or_404(PACKAGE, packagenum=packagenum)
 	return render(request,'added.html',locals())
 
+def package(request,packagenum):
+	package=get_object_or_404(PACKAGE, packagenum=packagenum)
+	return render(request,'package.html',locals())
 
 def search(request):
 	data=[]
