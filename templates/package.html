@@ -1,0 +1,131 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="h-100" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>5Star logistics · Add Packages</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/sticky-footer-navbar.css' %}" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Fixed navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/add">Add Package <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adminpg">Admin</a>
+        </li>
+      </ul>
+      <form action='/search' class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-1" >
+   <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Payment</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Departure</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Arriver</a>
+    <a class="nav-item nav-link" id="nav-pickup-tab" data-toggle="tab" href="#nav-pickup" role="tab" aria-controls="nav-pickup" aria-selected="false">Pickup</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <form class="form">
+  <input class="form-control" placeholder="Date">
+  <input class="form-control" placeholder="Weight">
+  <input class="form-control" placeholder="Price">
+  <select class="form-control" name="method">
+  <option class="form-control" value="wechat">Wechat</option>
+  <option class="form-control" value="alipay">Alipay</option>
+  <option class="form-control" value="Bank">Bank</option>
+  <option class="form-control" value="cash">Cash</option>
+  </select>
+  <input type="submit" class="form-control btn btn-primary" value="Update">
+  </form>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  <div class="tab-pane fade" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">...</div>
+</div>
+  </div>
+    <div class="col-md-4 mt-1">
+    <!--sender,receiver,destination,weight,price,descr-->
+    <h1 class="h3 mb-3 font-weight-normal h3-primary">Package: {{package.packagenum}}</h1>
+    <p >
+    <b>Sender:</b> {{package.sender_name}}
+    </p>
+    <p>
+    <b>Receiver:</b> {{package.receiver_name}}
+    
+    </p>
+    <p>
+    <b>Destination:</b> {{package.destination}}
+    </p>
+    <p>
+    <b>Weight:</b> {{package.weight}} KG 
+    </p>
+    <p>
+    <b>Price:</b> {{package.price}} RWF
+    </p>
+    <p>
+    <b>Description:</b> {{package.description}}
+    </p>
+    <img class="img-fluid rounded" src="qrcode.jpeg">
+    <a class="mt-1 form-control btn btn-primary" href="#"> Download </a>
+    </div>
+
+</main>
+<footer class="footer mt-auto py-3">
+  <div class="container">
+  <center>
+    <span class="text-muted">© Copyright 2018 5Star - All rights reserved.</span>
+  </center>
+  </div>
+</footer>
+<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body></html>

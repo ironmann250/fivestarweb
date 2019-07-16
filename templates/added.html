@@ -1,0 +1,132 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="h-100" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>5Star logistics · Add Packages</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/sticky-footer-navbar.css' %}" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Fixed navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/add">Add Package <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/adminpg">Admin</a>
+        </li>
+      </ul>
+      <form action='/search/' class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+
+<main role="main" class="flex-shrink-0">
+
+  <div class="container">
+    <div class="row">
+    <div class="col-md-4 mt-1 offset-md-2" style="border-color:#007bff;border-style:solid;border-left:4px;border-right:4px;">
+    <!--sender,receiver,destination,weight,price,descr-->
+    <h1 class="h3 mb-3 font-weight-normal h3-primary">Package: {{package.packagenum}}</h1>
+    <p style="">
+    
+    <b>Sender:</b> {{package.sender_name}}
+    
+    </p>
+    <p style="">
+    
+    <b>Receiver:</b> {{package.receiver_name}}
+    
+    </p>
+    <p style="">
+    
+    <b>Destination:</b> {{package.destination}}
+    
+    </p>
+    <p style="">
+    
+    <b>Weight:</b> {{package.init_weight}} KG 
+    
+    </p>
+    <p style="">
+    
+    <b>Price:</b> {{package.init_price}} RWF
+    
+    </p>
+    <p>
+    
+    <b>Description:</b> {{package.description}}
+    <img class="img-fluid rounded" src="/render_ticket/{{package.packagenum}}.jpg">
+    <center><a class="mt-1" href="/render_ticket/{{package.packagenum}}.jpg" download> Download </a></center>
+    </p>
+    </div>
+
+    <form action='/add/' method='POST' class="form col-md-4 mt-1">
+      {% csrf_token %}
+    <!--sender,receiver,destination,weight,price,descr-->
+    <h1 class="h3 mb-4 font-weight-normal h3-primary" style="border-color:#007bff;border-style:solid;border-left:4px; border-right:0px; border-bottom:0px;"><center>Add Another Package<center></h1>
+    <input class="mb-1 form-control" name="sender_name" placeholder="Sender Name" required autofocus>
+    <input class="mb-1 form-control" name="sender_phone" placeholder="Sender Phone Number" required autofocus>
+    <input class="mb-1 form-control" name="receiver_name" placeholder="Receiver Name" required>
+    <input class="mb-1 form-control" name="receiver_phone" placeholder="Receiver Phone Number" required>
+    <input class="mb-1 form-control" name="destination" placeholder="Destination" required>
+    <input class="mb-1 form-control" name="weight" placeholder="Weight" required>
+    <input class="mb-1 form-control" name="price" placeholder="Price" required>
+   <textarea  class="mb-1 form-control" name="description" placeholder="Description"></textarea>
+   <input class="form-control btn btn-primary mt" type="submit" value="Add Package">
+    </form>
+  </div>
+
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+  <center>
+    <span class="text-muted">© Copyright 2018 5Star - All rights reserved.</span>
+  </center>
+  </div>
+</footer>
+<!-- Wrapping element -->
+<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body></html>
