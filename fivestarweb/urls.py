@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^add/', views.add),
     url(r'^search/', views.search),
+    url(r'^adminpg/', views.adminpg),
     url(r'^added/(?P<packagenum>.*)', views.added),
     url(r'^package/(?P<packagenum>.*)', views.package),
     url(r'^render_ticket/(?P<packagenum>.*\.jpg)',views.renderTicket),

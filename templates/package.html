@@ -83,12 +83,28 @@
   <option class="form-control" value="Bank">Bank</option>
   <option class="form-control" value="cash">Cash</option>
   </select>
-  <input type="submit" class="form-control btn btn-primary" value="Update">
+  <input type="submit" class="form-control btn btn-primary mt-3" value="Update">
   </form>
   </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-  <div class="tab-pane fade" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">...</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+  <form class="form">
+  <input class="form-control" placeholder="Expected Date">
+  <input class="form-control" placeholder="Origin (ship/plane location)">
+  <input type="submit" class="form-control btn btn-primary mt-3" value="Update">
+  </form>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+  <form class="form">
+  <input class="form-control" placeholder="Arrival Date">
+  <input type="submit" class="form-control btn btn-primary mt-3" value="Update">
+  </form>
+  </div>
+  <div class="tab-pane fade" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">
+  <form class="form">
+  <input type='hidden' class="form-control">
+  <input type="submit" class="form-control btn btn-primary mt-3" value="Confirm Pickup">
+  </form>
+  </div>
 </div>
   </div>
     <div class="col-md-4 mt-1">
@@ -105,10 +121,10 @@
     <b>Destination:</b> {{package.destination}}
     </p>
     <p>
-    <b>Weight:</b> {{package.weight}} KG 
+    <b>Weight:</b> {{package.init_weight}} KG 
     </p>
     <p>
-    <b>Price:</b> {{package.price}} RWF
+    <b>Price:</b> {{package.init_price}} RWF
     </p>
     <p>
     <b>Description:</b> {{package.description}}

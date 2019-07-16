@@ -132,6 +132,9 @@ def package(request,packagenum):
 	package=get_object_or_404(PACKAGE, packagenum=packagenum)
 	return render(request,'package.html',locals())
 
+def adminpg(request):
+	return render(request,'adminpg.html',locals())
+
 def search(request):
 	data=[]
 	try:
