@@ -1,4 +1,4 @@
-Django==1.9
+Django==1.11.29
 gunicorn==19.6.0
 whitenoise==2.0.6
 qrcode==5.3
