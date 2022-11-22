@@ -3,5 +3,5 @@ gunicorn==19.6.0
 whitenoise==2.0.6
 qrcode==5.3
 south==1.0.2
-pillow==2.5.1
+pillow==9.3.0
 
